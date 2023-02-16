@@ -1,0 +1,11 @@
+D:\Visual Studio projects\Collision\bin\Debug\Collision.exe.config
+D:\Visual Studio projects\Collision\bin\Debug\Collision.exe
+D:\Visual Studio projects\Collision\bin\Debug\Collision.pdb
+D:\Visual Studio projects\Collision\obj\Debug\Collision.csproj.AssemblyReference.cache
+D:\Visual Studio projects\Collision\obj\Debug\Collision.csproj.SuggestedBindingRedirects.cache
+D:\Visual Studio projects\Collision\obj\Debug\Collision.Form1.resources
+D:\Visual Studio projects\Collision\obj\Debug\Collision.Properties.Resources.resources
+D:\Visual Studio projects\Collision\obj\Debug\Collision.csproj.GenerateResource.cache
+D:\Visual Studio projects\Collision\obj\Debug\Collision.csproj.CoreCompileInputs.cache
+D:\Visual Studio projects\Collision\obj\Debug\Collision.exe
+D:\Visual Studio projects\Collision\obj\Debug\Collision.pdb
