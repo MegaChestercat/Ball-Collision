@@ -14,20 +14,22 @@ namespace Collision
     {
 
         Canvas canvas;
-     
-        
+
         public Form1()
         {
             InitializeComponent();
-            canvas = new Canvas(PCT_CANVAS);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            canvas.MoveBall();
+            canvas.CreateBall();
         }
 
-        
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            canvas = new Canvas(PCT_CANVAS);
+        }
     }
+    
 }
 

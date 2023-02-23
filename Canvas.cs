@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -10,46 +11,34 @@ namespace Collision
         static Bitmap bmp;
         static Graphics g;
         PictureBox pct;
-        List<Ball> balls;
-        //Ball ball;
+        List<Ball> balls ;
+        static Random rand = new Random();
 
         public Canvas(PictureBox pct)
         {
             balls = new List<Ball>();
             this.pct = pct;
             bmp = new Bitmap(pct.Width, pct.Height);
+            g = Graphics.FromImage(bmp);
+            pct.Image = bmp;
+
             for (int i = 0; i < 5; i++)
             {
-                balls.Add(new Ball(bmp.Size));
+                balls.Add(new Ball(rand, bmp.Size));
             }
-            Init();
         }
 
-        public void Init()
+        public void CreateBall()
         {
-            g = Graphics.FromImage(bmp);
             g.Clear(Color.Black);
-            pct.Image = bmp;
+            Ball b;
+            for (int i = 0; i < balls.Count; i++)
+            {
+                balls[i].MoveBall(pct);
+                b = balls[i];
+                g.FillEllipse(new SolidBrush(balls[i].c), b.p.X, b.p.Y, b.r, b.r);
+            }
             pct.Invalidate();
-
-            foreach(Ball ball in balls)
-            {
-                ball.CreateBall(g, pct);
-            }
-            
-
-        }
-
-        public void MoveBall()
-        {
-
-            foreach(Ball ball in balls)
-            {
-                ball.MoveBall(g, pct);
-            }
-            
-            
-           
         }
  
     }

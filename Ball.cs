@@ -9,30 +9,31 @@ namespace Collision
     public class Ball
     {
 
-        int r;
-        Random rnd = new Random();
-        PointF p, v;
-        Color c;
-        SolidBrush brush;
+        public int r;
+        //Random rnd = new Random();
+        public PointF p, v;
+        public Color c;
+        //public SolidBrush brush;
 
 
-        public Ball(Size s)
+        public Ball(Random rnd, Size s)
         {
             p = new PointF(rnd.Next(150, s.Width-150), rnd.Next(150, s.Height-150));
+            r = rnd.Next(50, 80);
+            //p = new PointF(rnd.Next(s.Width - r), rnd.Next(s.Height - r));
             v = new PointF(rnd.Next(-20, 20), rnd.Next(-20, 20));
             c = Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255));
-            brush = new SolidBrush(c);
+
+            //brush = new SolidBrush(c);
         }
         public void CreateBall(Graphics g, PictureBox pct)
         {
 
-            r = rnd.Next(50, 80);
-            
-            g.FillEllipse(brush, p.X, p.Y, r, r);
-            pct.Invalidate();
+            //g.FillEllipse(brush, p.X, p.Y, r, r);
+            //pct.Invalidate();
         }
 
-        public void MoveBall(Graphics g, PictureBox pct)
+        public void MoveBall(PictureBox pct)
         {
             p.X += v.X;
             p.Y += v.Y;
@@ -47,13 +48,6 @@ namespace Collision
             {
                 v.Y = -v.Y;
             }
-
-            
-
-            g.Clear(Color.Black);
-            g.FillEllipse(brush, p.X, p.Y, r, r);
-            pct.Invalidate();
-
         }
     }
 }
